@@ -1,4 +1,4 @@
-# Redmine API ¶×¤J½m²ß
+# Redmine åŒ¯å…¥ Azure DevOps
 
-## ½m²ß¥Ø¼Ð
-»P Redmine API ¤¬°Ê¡A³z¹L API ¨ú±o±M®×¦Cªí¶×¤J¨ì DevOps¡C
+## ç·´ç¿’ç›®æ¨™
+redmine å°ˆæ¡ˆåŠŸèƒ½è½‰ç§»
