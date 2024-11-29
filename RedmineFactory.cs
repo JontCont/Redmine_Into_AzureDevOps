@@ -29,4 +29,10 @@ public class RedmineFactory : RedmineManager
             { "limit", limit }
         });
     }
+    
+    public IList<IssueStatus> GetStatuses()
+    {
+        return this.GetObjects<IssueStatus>();
+    }
+    
 }
