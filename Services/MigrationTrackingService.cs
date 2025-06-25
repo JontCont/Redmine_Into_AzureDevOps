@@ -15,6 +15,7 @@ public interface IMigrationTrackingService
 
 public class FileMigrationTrackingService : IMigrationTrackingService
 {
+    private static readonly SemaphoreSlim _fileLock = new SemaphoreSlim(1, 1);
     private readonly string _migrationRecordsPath;
     private readonly string _attachmentRecordsPath;
     private readonly JsonSerializerOptions _jsonOptions;
@@ -38,31 +39,58 @@ public class FileMigrationTrackingService : IMigrationTrackingService
 
     public async Task SaveMigrationRecordAsync(MigrationRecord record)
     {
-        var records = await GetAllMigrationRecordsAsync();
-        var existingIndex = records.FindIndex(r => r.RedmineIssueId == record.RedmineIssueId);
-        
-        if (existingIndex >= 0)
+        await _fileLock.WaitAsync();
+        try
         {
-            records[existingIndex] = record;
-        }
-        else
-        {
-            records.Add(record);
-        }
+            var records = await GetAllMigrationRecordsInternalAsync(false);
+            var existingIndex = records.FindIndex(r => r.RedmineIssueId == record.RedmineIssueId);
 
-        var json = JsonSerializer.Serialize(records, _jsonOptions);
-        await File.WriteAllTextAsync(_migrationRecordsPath, json);
+            if (existingIndex >= 0)
+            {
+                records[existingIndex] = record;
+            }
+            else
+            {
+                records.Add(record);
+            }
+
+            var json = JsonSerializer.Serialize(records, _jsonOptions);
+            await File.WriteAllTextAsync(_migrationRecordsPath, json);
+        }
+        finally
+        {
+            _fileLock.Release();
+        }
     }
 
     public async Task<List<MigrationRecord>> GetAllMigrationRecordsAsync()
     {
-        if (!File.Exists(_migrationRecordsPath))
-        {
-            return new List<MigrationRecord>();
-        }
+        return await GetAllMigrationRecordsInternalAsync(true);
+    }
 
-        var json = await File.ReadAllTextAsync(_migrationRecordsPath);
-        return JsonSerializer.Deserialize<List<MigrationRecord>>(json, _jsonOptions) ?? new List<MigrationRecord>();
+    private async Task<List<MigrationRecord>> GetAllMigrationRecordsInternalAsync(bool acquireLock)
+    {
+        if (acquireLock)
+        {
+            await _fileLock.WaitAsync();
+        }
+        try
+        {
+            if (!File.Exists(_migrationRecordsPath))
+            {
+                return new List<MigrationRecord>();
+            }
+
+            var json = await File.ReadAllTextAsync(_migrationRecordsPath);
+            return JsonSerializer.Deserialize<List<MigrationRecord>>(json, _jsonOptions) ?? new List<MigrationRecord>();
+        }
+        finally
+        {
+            if (acquireLock)
+            {
+                _fileLock.Release();
+            }
+        }
     }
 
     public async Task<bool> IsIssueAlreadyMigratedAsync(int redmineIssueId)
@@ -73,25 +101,52 @@ public class FileMigrationTrackingService : IMigrationTrackingService
 
     public async Task SaveAttachmentRecordAsync(AttachmentMigrationRecord record)
     {
-        var records = await GetAttachmentRecordsAsync();
-        records.Add(record);
+        await _fileLock.WaitAsync();
+        try
+        {
+            var records = await GetAttachmentRecordsInternalAsync(0, false);
+            records.Add(record);
 
-        var json = JsonSerializer.Serialize(records, _jsonOptions);
-        await File.WriteAllTextAsync(_attachmentRecordsPath, json);
+            var json = JsonSerializer.Serialize(records, _jsonOptions);
+            await File.WriteAllTextAsync(_attachmentRecordsPath, json);
+        }
+        finally
+        {
+            _fileLock.Release();
+        }
     }
 
-    public async Task<List<AttachmentMigrationRecord>> GetAttachmentRecordsAsync(int redmineIssueId = 0)
+    public async Task<List<AttachmentMigrationRecord>> GetAttachmentRecordsAsync(int redmineIssueId)
     {
-        if (!File.Exists(_attachmentRecordsPath))
-        {
-            return new List<AttachmentMigrationRecord>();
-        }
+        return await GetAttachmentRecordsInternalAsync(redmineIssueId, true);
+    }
 
-        var json = await File.ReadAllTextAsync(_attachmentRecordsPath);
-        var allRecords = JsonSerializer.Deserialize<List<AttachmentMigrationRecord>>(json, _jsonOptions) ?? new List<AttachmentMigrationRecord>();
-        
-        return redmineIssueId > 0 
-            ? allRecords.Where(r => r.RedmineIssueId == redmineIssueId).ToList()
-            : allRecords;
+    private async Task<List<AttachmentMigrationRecord>> GetAttachmentRecordsInternalAsync(int redmineIssueId, bool acquireLock)
+    {
+        if (acquireLock)
+        {
+            await _fileLock.WaitAsync();
+        }
+        try
+        {
+            if (!File.Exists(_attachmentRecordsPath))
+            {
+                return new List<AttachmentMigrationRecord>();
+            }
+
+            var json = await File.ReadAllTextAsync(_attachmentRecordsPath);
+            var allRecords = JsonSerializer.Deserialize<List<AttachmentMigrationRecord>>(json, _jsonOptions) ?? new List<AttachmentMigrationRecord>();
+
+            return redmineIssueId > 0
+                ? allRecords.Where(r => r.RedmineIssueId == redmineIssueId).ToList()
+                : allRecords;
+        }
+        finally
+        {
+            if (acquireLock)
+            {
+                _fileLock.Release();
+            }
+        }
     }
 }

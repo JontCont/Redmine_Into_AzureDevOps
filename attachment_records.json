@@ -1,0 +1,1472 @@
+[
+  {
+    "redmineIssueId": 80783,
+    "azureWorkItemId": 11,
+    "redmineAttachmentId": 212565,
+    "fileName": "clipboard-202506171751-v8t8s.png",
+    "fileSize": 61129,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T09:18:17.3785867Z"
+  },
+  {
+    "redmineIssueId": 80172,
+    "azureWorkItemId": 10,
+    "redmineAttachmentId": 210768,
+    "fileName": "clipboard-202506051107-4shkw.png",
+    "fileSize": 650587,
+    "migrationSuccess": false,
+    "errorMessage": "The process cannot access the file \u0027C:\\Company\\A01.Git\\Redmine_Into_AzureDevOps\\attachment_records.json\u0027 because it is being used by another process.",
+    "migratedAt": "2025-06-25T09:18:17.3859003Z"
+  },
+  {
+    "redmineIssueId": 80454,
+    "azureWorkItemId": 12,
+    "redmineAttachmentId": 211701,
+    "fileName": "clipboard-202506111542-hhtha.png",
+    "fileSize": 190565,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T09:18:19.5758943Z"
+  },
+  {
+    "redmineIssueId": 80517,
+    "azureWorkItemId": 9,
+    "redmineAttachmentId": 211718,
+    "fileName": "clipboard-202506111632-iuaty.png",
+    "fileSize": 66539,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T09:33:07.3343933Z"
+  },
+  {
+    "redmineIssueId": 80517,
+    "azureWorkItemId": 9,
+    "redmineAttachmentId": 211722,
+    "fileName": "clipboard-202506111640-sj16t.png",
+    "fileSize": 51341,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T09:33:08.8048691Z"
+  },
+  {
+    "redmineIssueId": 80517,
+    "azureWorkItemId": 9,
+    "redmineAttachmentId": 211723,
+    "fileName": "clipboard-202506111640-h5af6.png",
+    "fileSize": 38579,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T09:33:10.0655575Z"
+  },
+  {
+    "redmineIssueId": 80838,
+    "azureWorkItemId": 14,
+    "redmineAttachmentId": 212813,
+    "fileName": "clipboard-202506181805-83gyl.png",
+    "fileSize": 18811833,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T09:33:16.1638671Z"
+  },
+  {
+    "redmineIssueId": 80838,
+    "azureWorkItemId": 14,
+    "redmineAttachmentId": 212814,
+    "fileName": "clipboard-202506181806-wluor.png",
+    "fileSize": 15020070,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T09:33:23.8389635Z"
+  },
+  {
+    "redmineIssueId": 80838,
+    "azureWorkItemId": 14,
+    "redmineAttachmentId": 212815,
+    "fileName": "clipboard-202506181807-wwgba.png",
+    "fileSize": 15834820,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T09:33:31.213442Z"
+  },
+  {
+    "redmineIssueId": 80838,
+    "azureWorkItemId": 14,
+    "redmineAttachmentId": 212816,
+    "fileName": "clipboard-202506181808-1nmgg.png",
+    "fileSize": 18696910,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T09:33:39.2372734Z"
+  },
+  {
+    "redmineIssueId": 80838,
+    "azureWorkItemId": 14,
+    "redmineAttachmentId": 212818,
+    "fileName": "clipboard-202506181809-pmixi.png",
+    "fileSize": 13983318,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T09:33:45.7440045Z"
+  },
+  {
+    "redmineIssueId": 80838,
+    "azureWorkItemId": 14,
+    "redmineAttachmentId": 212820,
+    "fileName": "clipboard-202506181810-8pwi3.png",
+    "fileSize": 13112683,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T09:33:52.2557708Z"
+  },
+  {
+    "redmineIssueId": 80838,
+    "azureWorkItemId": 14,
+    "redmineAttachmentId": 212831,
+    "fileName": "clipboard-202506190040-ffn6i.png",
+    "fileSize": 65886,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T09:33:53.6464391Z"
+  },
+  {
+    "redmineIssueId": 80838,
+    "azureWorkItemId": 14,
+    "redmineAttachmentId": 213649,
+    "fileName": "clipboard-202506251110-rxruk.png",
+    "fileSize": 161948,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T09:33:55.0946353Z"
+  },
+  {
+    "redmineIssueId": 80838,
+    "azureWorkItemId": 14,
+    "redmineAttachmentId": 213650,
+    "fileName": "clipboard-202506251111-stfii.png",
+    "fileSize": 154285,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T09:33:56.6306691Z"
+  },
+  {
+    "redmineIssueId": 80783,
+    "azureWorkItemId": 11,
+    "redmineAttachmentId": 212565,
+    "fileName": "clipboard-202506171751-v8t8s.png",
+    "fileSize": 61129,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:00.8026771Z"
+  },
+  {
+    "redmineIssueId": 80021,
+    "azureWorkItemId": 39,
+    "redmineAttachmentId": 211693,
+    "fileName": "clipboard-202506111530-hwn3p.png",
+    "fileSize": 134331,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:04.5480058Z"
+  },
+  {
+    "redmineIssueId": 80021,
+    "azureWorkItemId": 39,
+    "redmineAttachmentId": 211695,
+    "fileName": "clipboard-202506111532-34ead.png",
+    "fileSize": 121318,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:05.9967126Z"
+  },
+  {
+    "redmineIssueId": 80021,
+    "azureWorkItemId": 39,
+    "redmineAttachmentId": 211698,
+    "fileName": "clipboard-202506111535-5q2aj.png",
+    "fileSize": 220000,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:07.5775696Z"
+  },
+  {
+    "redmineIssueId": 80021,
+    "azureWorkItemId": 39,
+    "redmineAttachmentId": 211699,
+    "fileName": "clipboard-202506111536-ni8ru.png",
+    "fileSize": 133428,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:09.1275216Z"
+  },
+  {
+    "redmineIssueId": 80021,
+    "azureWorkItemId": 39,
+    "redmineAttachmentId": 211797,
+    "fileName": "clipboard-202506111914-h6rqv.png",
+    "fileSize": 200158,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:10.7124522Z"
+  },
+  {
+    "redmineIssueId": 80021,
+    "azureWorkItemId": 39,
+    "redmineAttachmentId": 211912,
+    "fileName": "clipboard-202506121425-dbvvk.png",
+    "fileSize": 120341,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:12.144297Z"
+  },
+  {
+    "redmineIssueId": 80021,
+    "azureWorkItemId": 39,
+    "redmineAttachmentId": 212489,
+    "fileName": "clipboard-202506171427-poxr1.png",
+    "fileSize": 147943,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:13.7142067Z"
+  },
+  {
+    "redmineIssueId": 80021,
+    "azureWorkItemId": 39,
+    "redmineAttachmentId": 212503,
+    "fileName": "clipboard-202506171517-1y2gy.png",
+    "fileSize": 117435,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:15.1294914Z"
+  },
+  {
+    "redmineIssueId": 80021,
+    "azureWorkItemId": 39,
+    "redmineAttachmentId": 213563,
+    "fileName": "S__112910343.jpg",
+    "fileSize": 382277,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:16.8615612Z"
+  },
+  {
+    "redmineIssueId": 80021,
+    "azureWorkItemId": 39,
+    "redmineAttachmentId": 213564,
+    "fileName": "S__112910344.jpg",
+    "fileSize": 197970,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:18.4233133Z"
+  },
+  {
+    "redmineIssueId": 78783,
+    "azureWorkItemId": 49,
+    "redmineAttachmentId": 206932,
+    "fileName": "clipboard-202505081434-e33by.png",
+    "fileSize": 250893,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:21.9454026Z"
+  },
+  {
+    "redmineIssueId": 78783,
+    "azureWorkItemId": 49,
+    "redmineAttachmentId": 210711,
+    "fileName": "IMG_5187.jpeg",
+    "fileSize": 2677736,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:25.4264567Z"
+  },
+  {
+    "redmineIssueId": 78051,
+    "azureWorkItemId": 59,
+    "redmineAttachmentId": 203952,
+    "fileName": "clipboard-202504161158-4p3q6.png",
+    "fileSize": 195976,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:28.8952425Z"
+  },
+  {
+    "redmineIssueId": 78051,
+    "azureWorkItemId": 59,
+    "redmineAttachmentId": 203953,
+    "fileName": "clipboard-202504161159-plu4b.png",
+    "fileSize": 201480,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:30.4567947Z"
+  },
+  {
+    "redmineIssueId": 78051,
+    "azureWorkItemId": 59,
+    "redmineAttachmentId": 204190,
+    "fileName": "clipboard-202504171347-mlaxi.png",
+    "fileSize": 220852,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:32.0265099Z"
+  },
+  {
+    "redmineIssueId": 78051,
+    "azureWorkItemId": 59,
+    "redmineAttachmentId": 204191,
+    "fileName": "clipboard-202504171347-6g9ns.png",
+    "fileSize": 215163,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:33.62525Z"
+  },
+  {
+    "redmineIssueId": 78051,
+    "azureWorkItemId": 59,
+    "redmineAttachmentId": 204192,
+    "fileName": "clipboard-202504171347-igl7u.png",
+    "fileSize": 230084,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:35.1876566Z"
+  },
+  {
+    "redmineIssueId": 78051,
+    "azureWorkItemId": 59,
+    "redmineAttachmentId": 204193,
+    "fileName": "clipboard-202504171348-emtgp.png",
+    "fileSize": 176904,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:36.7599375Z"
+  },
+  {
+    "redmineIssueId": 78051,
+    "azureWorkItemId": 59,
+    "redmineAttachmentId": 204194,
+    "fileName": "clipboard-202504171348-5xjsz.png",
+    "fileSize": 239721,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:38.4242907Z"
+  },
+  {
+    "redmineIssueId": 78051,
+    "azureWorkItemId": 59,
+    "redmineAttachmentId": 204195,
+    "fileName": "clipboard-202504171348-irjuo.png",
+    "fileSize": 209013,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:40.0815681Z"
+  },
+  {
+    "redmineIssueId": 77444,
+    "azureWorkItemId": 69,
+    "redmineAttachmentId": 201547,
+    "fileName": "clipboard-202503311442-anne2.png",
+    "fileSize": 101918,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:43.43723Z"
+  },
+  {
+    "redmineIssueId": 77444,
+    "azureWorkItemId": 69,
+    "redmineAttachmentId": 201548,
+    "fileName": "clipboard-202503311442-d17ju.png",
+    "fileSize": 64127,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:44.859839Z"
+  },
+  {
+    "redmineIssueId": 77444,
+    "azureWorkItemId": 69,
+    "redmineAttachmentId": 201549,
+    "fileName": "clipboard-202503311443-e32q2.png",
+    "fileSize": 97821,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:46.2774872Z"
+  },
+  {
+    "redmineIssueId": 77444,
+    "azureWorkItemId": 69,
+    "redmineAttachmentId": 201550,
+    "fileName": "clipboard-202503311443-eblsv.png",
+    "fileSize": 117604,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:47.7031526Z"
+  },
+  {
+    "redmineIssueId": 77444,
+    "azureWorkItemId": 69,
+    "redmineAttachmentId": 203676,
+    "fileName": "clipboard-202504151354-pychf.png",
+    "fileSize": 160606,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:49.2553918Z"
+  },
+  {
+    "redmineIssueId": 77444,
+    "azureWorkItemId": 69,
+    "redmineAttachmentId": 203677,
+    "fileName": "clipboard-202504151355-parr6.png",
+    "fileSize": 151583,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:50.9055561Z"
+  },
+  {
+    "redmineIssueId": 77444,
+    "azureWorkItemId": 69,
+    "redmineAttachmentId": 203910,
+    "fileName": "S__107814928.jpg",
+    "fileSize": 543022,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:52.8428431Z"
+  },
+  {
+    "redmineIssueId": 77444,
+    "azureWorkItemId": 69,
+    "redmineAttachmentId": 203911,
+    "fileName": "S__107814929.jpg",
+    "fileSize": 547026,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:54.7668655Z"
+  },
+  {
+    "redmineIssueId": 76719,
+    "azureWorkItemId": 79,
+    "redmineAttachmentId": 198546,
+    "fileName": "clipboard-202503110947-kapwy.png",
+    "fileSize": 45511,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:07:58.2674207Z"
+  },
+  {
+    "redmineIssueId": 76294,
+    "azureWorkItemId": 89,
+    "redmineAttachmentId": 196545,
+    "fileName": "clipboard-202502260857-bb97c.png",
+    "fileSize": 90436,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:08:02.2706286Z"
+  },
+  {
+    "redmineIssueId": 76294,
+    "azureWorkItemId": 89,
+    "redmineAttachmentId": 196546,
+    "fileName": "clipboard-202502260858-zzycv.png",
+    "fileSize": 63796,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:08:03.6707894Z"
+  },
+  {
+    "redmineIssueId": 75416,
+    "azureWorkItemId": 99,
+    "redmineAttachmentId": 192998,
+    "fileName": "clipboard-202502071338-y2hep.png",
+    "fileSize": 95862,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:08:07.0287242Z"
+  },
+  {
+    "redmineIssueId": 75416,
+    "azureWorkItemId": 99,
+    "redmineAttachmentId": 193091,
+    "fileName": "clipboard-202502071623-ixt4o.png",
+    "fileSize": 121605,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:08:08.5103218Z"
+  },
+  {
+    "redmineIssueId": 75416,
+    "azureWorkItemId": 99,
+    "redmineAttachmentId": 193092,
+    "fileName": "clipboard-202502071624-g9j9s.png",
+    "fileSize": 151402,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:08:10.4055836Z"
+  },
+  {
+    "redmineIssueId": 75416,
+    "azureWorkItemId": 99,
+    "redmineAttachmentId": 193094,
+    "fileName": "clipboard-202502071624-jtlno.png",
+    "fileSize": 183043,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:08:11.9899698Z"
+  },
+  {
+    "redmineIssueId": 75416,
+    "azureWorkItemId": 99,
+    "redmineAttachmentId": 193984,
+    "fileName": "clipboard-202502121450-sqnus.png",
+    "fileSize": 132627,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:08:13.5384631Z"
+  },
+  {
+    "redmineIssueId": 75416,
+    "azureWorkItemId": 99,
+    "redmineAttachmentId": 193985,
+    "fileName": "clipboard-202502121450-cjhvj.png",
+    "fileSize": 135095,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:08:15.0568684Z"
+  },
+  {
+    "redmineIssueId": 75416,
+    "azureWorkItemId": 99,
+    "redmineAttachmentId": 194260,
+    "fileName": "S__102334470.jpg",
+    "fileSize": 281088,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:08:17.0600942Z"
+  },
+  {
+    "redmineIssueId": 75416,
+    "azureWorkItemId": 99,
+    "redmineAttachmentId": 194265,
+    "fileName": "S__102334471.jpg",
+    "fileSize": 305570,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:08:19.1192665Z"
+  },
+  {
+    "redmineIssueId": 75416,
+    "azureWorkItemId": 99,
+    "redmineAttachmentId": 194266,
+    "fileName": "S__102334472.jpg",
+    "fileSize": 228463,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:08:20.7034504Z"
+  },
+  {
+    "redmineIssueId": 74176,
+    "azureWorkItemId": 119,
+    "redmineAttachmentId": 188301,
+    "fileName": "clipboard-202501060946-hgpbo.png",
+    "fileSize": 77597,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:08:26.4581778Z"
+  },
+  {
+    "redmineIssueId": 80993,
+    "azureWorkItemId": 132,
+    "redmineAttachmentId": 213378,
+    "fileName": "clipboard-202506231654-pid9p.png",
+    "fileSize": 24299,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:10:39.9106811Z"
+  },
+  {
+    "redmineIssueId": 80986,
+    "azureWorkItemId": 130,
+    "redmineAttachmentId": 213334,
+    "fileName": "clipboard-202506231533-8g0jl.png",
+    "fileSize": 58437,
+    "migrationSuccess": false,
+    "errorMessage": "\u4E0A\u50B3\u5931\u6557",
+    "migratedAt": "2025-06-25T10:10:39.9109649Z"
+  },
+  {
+    "redmineIssueId": 80981,
+    "azureWorkItemId": 129,
+    "redmineAttachmentId": 213310,
+    "fileName": "clipboard-202506231417-grjdx.png",
+    "fileSize": 89121,
+    "migrationSuccess": false,
+    "errorMessage": "\u4E0A\u50B3\u5931\u6557",
+    "migratedAt": "2025-06-25T10:10:39.9109249Z"
+  },
+  {
+    "redmineIssueId": 81074,
+    "azureWorkItemId": 131,
+    "redmineAttachmentId": 213654,
+    "fileName": "clipboard-202506251126-5tavz.png",
+    "fileSize": 101056,
+    "migrationSuccess": false,
+    "errorMessage": "\u4E0A\u50B3\u5931\u6557",
+    "migratedAt": "2025-06-25T10:10:39.9111153Z"
+  },
+  {
+    "redmineIssueId": 80986,
+    "azureWorkItemId": 130,
+    "redmineAttachmentId": 213335,
+    "fileName": "clipboard-202506231535-gj8dh.png",
+    "fileSize": 61905,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:10:41.5639542Z"
+  },
+  {
+    "redmineIssueId": 80981,
+    "azureWorkItemId": 129,
+    "redmineAttachmentId": 213311,
+    "fileName": "clipboard-202506231418-7kdrm.png",
+    "fileSize": 271064,
+    "migrationSuccess": false,
+    "errorMessage": "\u4E0A\u50B3\u5931\u6557",
+    "migratedAt": "2025-06-25T10:10:41.5642559Z"
+  },
+  {
+    "redmineIssueId": 81074,
+    "azureWorkItemId": 131,
+    "redmineAttachmentId": 213655,
+    "fileName": "clipboard-202506251126-tkw5l.png",
+    "fileSize": 246204,
+    "migrationSuccess": false,
+    "errorMessage": "\u4E0A\u50B3\u5931\u6557",
+    "migratedAt": "2025-06-25T10:10:41.5643269Z"
+  },
+  {
+    "redmineIssueId": 80993,
+    "azureWorkItemId": 132,
+    "redmineAttachmentId": 213379,
+    "fileName": "\u87A2\u5E55\u64F7\u53D6\u756B\u9762 2025-06-23 165448.png",
+    "fileSize": 188733,
+    "migrationSuccess": false,
+    "errorMessage": "\u4E0A\u50B3\u5931\u6557",
+    "migratedAt": "2025-06-25T10:10:41.5643594Z"
+  },
+  {
+    "redmineIssueId": 80914,
+    "azureWorkItemId": 139,
+    "redmineAttachmentId": 213119,
+    "fileName": "clipboard-202506201602-0zbvy.png",
+    "fileSize": 137190,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:10:45.4812123Z"
+  },
+  {
+    "redmineIssueId": 80914,
+    "azureWorkItemId": 139,
+    "redmineAttachmentId": 213120,
+    "fileName": "clipboard-202506201603-7m8wr.png",
+    "fileSize": 100323,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:10:46.9573804Z"
+  },
+  {
+    "redmineIssueId": 80914,
+    "azureWorkItemId": 139,
+    "redmineAttachmentId": 213122,
+    "fileName": "clipboard-202506201605-k1vzt.png",
+    "fileSize": 88967,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:10:49.5730025Z"
+  },
+  {
+    "redmineIssueId": 80825,
+    "azureWorkItemId": 149,
+    "redmineAttachmentId": 212774,
+    "fileName": "clipboard-202506181606-swa1p.png",
+    "fileSize": 52851,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:10:53.0120446Z"
+  },
+  {
+    "redmineIssueId": 80825,
+    "azureWorkItemId": 149,
+    "redmineAttachmentId": 212775,
+    "fileName": "clipboard-202506181608-dwayr.png",
+    "fileSize": 225936,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:10:55.5422347Z"
+  },
+  {
+    "redmineIssueId": 80825,
+    "azureWorkItemId": 149,
+    "redmineAttachmentId": 212776,
+    "fileName": "\u87A2\u5E55\u64F7\u53D6\u756B\u9762 2025-06-18 160816.png",
+    "fileSize": 203984,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:10:57.2423919Z"
+  },
+  {
+    "redmineIssueId": 80825,
+    "azureWorkItemId": 149,
+    "redmineAttachmentId": 213365,
+    "fileName": "clipboard-202506231618-xuiwr.png",
+    "fileSize": 137025,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:10:58.8661627Z"
+  },
+  {
+    "redmineIssueId": 80817,
+    "azureWorkItemId": 164,
+    "redmineAttachmentId": 212748,
+    "fileName": "clipboard-202506181529-mzcax.png",
+    "fileSize": 96180,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:02.3122365Z"
+  },
+  {
+    "redmineIssueId": 80817,
+    "azureWorkItemId": 164,
+    "redmineAttachmentId": 212749,
+    "fileName": "\u87A2\u5E55\u64F7\u53D6\u756B\u9762 2025-06-18 152930.png",
+    "fileSize": 191124,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:04.198845Z"
+  },
+  {
+    "redmineIssueId": 80817,
+    "azureWorkItemId": 164,
+    "redmineAttachmentId": 213358,
+    "fileName": "clipboard-202506231610-51u7p.png",
+    "fileSize": 67782,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:05.5957784Z"
+  },
+  {
+    "redmineIssueId": 80720,
+    "azureWorkItemId": 169,
+    "redmineAttachmentId": 212330,
+    "fileName": "clipboard-202506161609-u9zdi.png",
+    "fileSize": 129462,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:09.1128913Z"
+  },
+  {
+    "redmineIssueId": 80720,
+    "azureWorkItemId": 169,
+    "redmineAttachmentId": 212331,
+    "fileName": "clipboard-202506161611-jpdgx.png",
+    "fileSize": 114914,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:10.5636206Z"
+  },
+  {
+    "redmineIssueId": 80720,
+    "azureWorkItemId": 169,
+    "redmineAttachmentId": 212332,
+    "fileName": "clipboard-202506161611-tescs.png",
+    "fileSize": 116908,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:12.0058876Z"
+  },
+  {
+    "redmineIssueId": 80720,
+    "azureWorkItemId": 169,
+    "redmineAttachmentId": 212333,
+    "fileName": "clipboard-202506161612-wk5o5.png",
+    "fileSize": 60057,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:13.2853644Z"
+  },
+  {
+    "redmineIssueId": 80720,
+    "azureWorkItemId": 169,
+    "redmineAttachmentId": 212334,
+    "fileName": "clipboard-202506161613-ggzdo.png",
+    "fileSize": 58197,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:14.5802362Z"
+  },
+  {
+    "redmineIssueId": 80720,
+    "azureWorkItemId": 169,
+    "redmineAttachmentId": 212357,
+    "fileName": "clipboard-202506161934-dmmma.png",
+    "fileSize": 104406,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:16.0348508Z"
+  },
+  {
+    "redmineIssueId": 80720,
+    "azureWorkItemId": 169,
+    "redmineAttachmentId": 213291,
+    "fileName": "clipboard-202506231146-fjwlv.png",
+    "fileSize": 249437,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:17.6303571Z"
+  },
+  {
+    "redmineIssueId": 80720,
+    "azureWorkItemId": 169,
+    "redmineAttachmentId": 213292,
+    "fileName": "clipboard-202506231150-hd0ev.png",
+    "fileSize": 41499,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:18.8816679Z"
+  },
+  {
+    "redmineIssueId": 80662,
+    "azureWorkItemId": 179,
+    "redmineAttachmentId": 212098,
+    "fileName": "clipboard-202506131435-2rrdz.png",
+    "fileSize": 136885,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:22.9720389Z"
+  },
+  {
+    "redmineIssueId": 80662,
+    "azureWorkItemId": 179,
+    "redmineAttachmentId": 212099,
+    "fileName": "clipboard-202506131435-ihhck.png",
+    "fileSize": 154902,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:24.8859102Z"
+  },
+  {
+    "redmineIssueId": 80662,
+    "azureWorkItemId": 179,
+    "redmineAttachmentId": 212174,
+    "fileName": "clipboard-202506131637-avmdm.png",
+    "fileSize": 131850,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:26.431567Z"
+  },
+  {
+    "redmineIssueId": 80662,
+    "azureWorkItemId": 179,
+    "redmineAttachmentId": 212176,
+    "fileName": "clipboard-202506131638-b61ir.png",
+    "fileSize": 173209,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:28.0005909Z"
+  },
+  {
+    "redmineIssueId": 80662,
+    "azureWorkItemId": 179,
+    "redmineAttachmentId": 212184,
+    "fileName": "clipboard-202506131655-hovuh.png",
+    "fileSize": 208296,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:29.5292021Z"
+  },
+  {
+    "redmineIssueId": 80662,
+    "azureWorkItemId": 179,
+    "redmineAttachmentId": 213246,
+    "fileName": "clipboard-202506212312-vtjet.png",
+    "fileSize": 155779,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:31.0663875Z"
+  },
+  {
+    "redmineIssueId": 80572,
+    "azureWorkItemId": 189,
+    "redmineAttachmentId": 211957,
+    "fileName": "clipboard-202506121744-2thm5.png",
+    "fileSize": 130979,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:35.1514618Z"
+  },
+  {
+    "redmineIssueId": 80572,
+    "azureWorkItemId": 189,
+    "redmineAttachmentId": 212656,
+    "fileName": "clipboard-202506181123-oqjnh.png",
+    "fileSize": 195786,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:37.3705788Z"
+  },
+  {
+    "redmineIssueId": 80507,
+    "azureWorkItemId": 199,
+    "redmineAttachmentId": 211689,
+    "fileName": "clipboard-202506111520-ik5w2.png",
+    "fileSize": 12619,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:40.5328148Z"
+  },
+  {
+    "redmineIssueId": 80507,
+    "azureWorkItemId": 199,
+    "redmineAttachmentId": 211690,
+    "fileName": "clipboard-202506111521-ext31.png",
+    "fileSize": 158702,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:42.3530538Z"
+  },
+  {
+    "redmineIssueId": 80507,
+    "azureWorkItemId": 199,
+    "redmineAttachmentId": 212695,
+    "fileName": "clipboard-202506181418-rnyrm.png",
+    "fileSize": 197680,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:44.5212039Z"
+  },
+  {
+    "redmineIssueId": 80432,
+    "azureWorkItemId": 209,
+    "redmineAttachmentId": 211463,
+    "fileName": "clipboard-202506101419-qtjbt.png",
+    "fileSize": 132449,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:47.9623459Z"
+  },
+  {
+    "redmineIssueId": 80432,
+    "azureWorkItemId": 209,
+    "redmineAttachmentId": 211465,
+    "fileName": "clipboard-202506101419-lolis.png",
+    "fileSize": 37690,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:49.2019195Z"
+  },
+  {
+    "redmineIssueId": 80432,
+    "azureWorkItemId": 209,
+    "redmineAttachmentId": 212241,
+    "fileName": "clipboard-202506151716-egv7y.png",
+    "fileSize": 64491,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:50.5722485Z"
+  },
+  {
+    "redmineIssueId": 80432,
+    "azureWorkItemId": 209,
+    "redmineAttachmentId": 212906,
+    "fileName": "clipboard-202506191438-mgvtt.png",
+    "fileSize": 79561,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:52.1150686Z"
+  },
+  {
+    "redmineIssueId": 80255,
+    "azureWorkItemId": 219,
+    "redmineAttachmentId": 210959,
+    "fileName": "clipboard-202506061012-nhhkn.png",
+    "fileSize": 187728,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:11:55.8589703Z"
+  },
+  {
+    "redmineIssueId": 80988,
+    "azureWorkItemId": 138,
+    "redmineAttachmentId": 213347,
+    "fileName": "clipboard-202506231602-fn3qr.png",
+    "fileSize": 77234,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:12:35.5929504Z"
+  },
+  {
+    "redmineIssueId": 80984,
+    "azureWorkItemId": 136,
+    "redmineAttachmentId": 213318,
+    "fileName": "clipboard-202506231457-r4div.png",
+    "fileSize": 187043,
+    "migrationSuccess": false,
+    "errorMessage": "\u4E0A\u50B3\u5931\u6557",
+    "migratedAt": "2025-06-25T10:12:35.5938272Z"
+  },
+  {
+    "redmineIssueId": 80996,
+    "azureWorkItemId": 133,
+    "redmineAttachmentId": 213382,
+    "fileName": "clipboard-202506231704-uyxi3.png",
+    "fileSize": 152962,
+    "migrationSuccess": false,
+    "errorMessage": "\u4E0A\u50B3\u5931\u6557",
+    "migratedAt": "2025-06-25T10:12:35.5939293Z"
+  },
+  {
+    "redmineIssueId": 80988,
+    "azureWorkItemId": 138,
+    "redmineAttachmentId": 213348,
+    "fileName": "clipboard-202506231602-7zusj.png",
+    "fileSize": 134141,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:12:37.4401829Z"
+  },
+  {
+    "redmineIssueId": 80996,
+    "azureWorkItemId": 133,
+    "redmineAttachmentId": 213383,
+    "fileName": "clipboard-202506231704-o2vbb.png",
+    "fileSize": 178130,
+    "migrationSuccess": false,
+    "errorMessage": "\u4E0A\u50B3\u5931\u6557",
+    "migratedAt": "2025-06-25T10:12:37.4415802Z"
+  },
+  {
+    "redmineIssueId": 80984,
+    "azureWorkItemId": 136,
+    "redmineAttachmentId": 213319,
+    "fileName": "clipboard-202506231458-wumxn.png",
+    "fileSize": 160250,
+    "migrationSuccess": false,
+    "errorMessage": "\u4E0A\u50B3\u5931\u6557",
+    "migratedAt": "2025-06-25T10:12:37.4417246Z"
+  },
+  {
+    "redmineIssueId": 80908,
+    "azureWorkItemId": 144,
+    "redmineAttachmentId": 213090,
+    "fileName": "clipboard-202506201351-1cbqe.png",
+    "fileSize": 56922,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:12:41.0661794Z"
+  },
+  {
+    "redmineIssueId": 80879,
+    "azureWorkItemId": 232,
+    "redmineAttachmentId": 212968,
+    "fileName": "clipboard-202506191701-bw9zd.png",
+    "fileSize": 162446,
+    "migrationSuccess": false,
+    "errorMessage": "\u4E0A\u50B3\u5931\u6557",
+    "migratedAt": "2025-06-25T10:12:41.0678598Z"
+  },
+  {
+    "redmineIssueId": 80908,
+    "azureWorkItemId": 144,
+    "redmineAttachmentId": 213091,
+    "fileName": "clipboard-202506201351-k0cks.png",
+    "fileSize": 179373,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:12:43.46075Z"
+  },
+  {
+    "redmineIssueId": 80879,
+    "azureWorkItemId": 232,
+    "redmineAttachmentId": 212969,
+    "fileName": "clipboard-202506191702-ekmvo.png",
+    "fileSize": 147370,
+    "migrationSuccess": false,
+    "errorMessage": "\u4E0A\u50B3\u5931\u6557",
+    "migratedAt": "2025-06-25T10:12:43.4828735Z"
+  },
+  {
+    "redmineIssueId": 80879,
+    "azureWorkItemId": 232,
+    "redmineAttachmentId": 212970,
+    "fileName": "clipboard-202506191704-ubmw1.png",
+    "fileSize": 92624,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:12:46.8898519Z"
+  },
+  {
+    "redmineIssueId": 80879,
+    "azureWorkItemId": 232,
+    "redmineAttachmentId": 212971,
+    "fileName": "clipboard-202506191705-zalt0.png",
+    "fileSize": 95499,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:12:48.979774Z"
+  },
+  {
+    "redmineIssueId": 80860,
+    "azureWorkItemId": 151,
+    "redmineAttachmentId": 212915,
+    "fileName": "clipboard-202506191454-pgdyc.png",
+    "fileSize": 67647,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:12:52.9977589Z"
+  },
+  {
+    "redmineIssueId": 80860,
+    "azureWorkItemId": 151,
+    "redmineAttachmentId": 212916,
+    "fileName": "clipboard-202506191457-b51be.png",
+    "fileSize": 80766,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:12:54.6191335Z"
+  },
+  {
+    "redmineIssueId": 80860,
+    "azureWorkItemId": 151,
+    "redmineAttachmentId": 212917,
+    "fileName": "clipboard-202506191457-p0qf1.png",
+    "fileSize": 177475,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:12:56.7916318Z"
+  },
+  {
+    "redmineIssueId": 80780,
+    "azureWorkItemId": 248,
+    "redmineAttachmentId": 212555,
+    "fileName": "clipboard-202506171730-ja6km.png",
+    "fileSize": 191629,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:01.0548491Z"
+  },
+  {
+    "redmineIssueId": 80736,
+    "azureWorkItemId": 256,
+    "redmineAttachmentId": 212373,
+    "fileName": "clipboard-202506170631-ehade.png",
+    "fileSize": 184833,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:05.1353776Z"
+  },
+  {
+    "redmineIssueId": 80736,
+    "azureWorkItemId": 256,
+    "redmineAttachmentId": 212374,
+    "fileName": "clipboard-202506170633-3wqdy.png",
+    "fileSize": 79379,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:06.5796584Z"
+  },
+  {
+    "redmineIssueId": 80736,
+    "azureWorkItemId": 256,
+    "redmineAttachmentId": 212375,
+    "fileName": "clipboard-202506170633-yfdsq.png",
+    "fileSize": 83952,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:07.9979772Z"
+  },
+  {
+    "redmineIssueId": 80736,
+    "azureWorkItemId": 256,
+    "redmineAttachmentId": 212376,
+    "fileName": "clipboard-202506170633-6cirx.png",
+    "fileSize": 95816,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:09.3984014Z"
+  },
+  {
+    "redmineIssueId": 80736,
+    "azureWorkItemId": 256,
+    "redmineAttachmentId": 212377,
+    "fileName": "clipboard-202506170634-ppqoy.png",
+    "fileSize": 96485,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:10.8594355Z"
+  },
+  {
+    "redmineIssueId": 80736,
+    "azureWorkItemId": 256,
+    "redmineAttachmentId": 212378,
+    "fileName": "clipboard-202506170634-62evo.png",
+    "fileSize": 62811,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:12.325809Z"
+  },
+  {
+    "redmineIssueId": 80736,
+    "azureWorkItemId": 256,
+    "redmineAttachmentId": 212379,
+    "fileName": "clipboard-202506170635-nmmn4.png",
+    "fileSize": 60774,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:13.6238468Z"
+  },
+  {
+    "redmineIssueId": 80736,
+    "azureWorkItemId": 256,
+    "redmineAttachmentId": 212380,
+    "fileName": "clipboard-202506170635-2bmjt.png",
+    "fileSize": 60164,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:14.9598543Z"
+  },
+  {
+    "redmineIssueId": 80736,
+    "azureWorkItemId": 256,
+    "redmineAttachmentId": 212381,
+    "fileName": "clipboard-202506170635-w1i4i.png",
+    "fileSize": 103433,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:16.4496987Z"
+  },
+  {
+    "redmineIssueId": 80736,
+    "azureWorkItemId": 256,
+    "redmineAttachmentId": 212382,
+    "fileName": "clipboard-202506170638-ig5js.png",
+    "fileSize": 103433,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:17.9031371Z"
+  },
+  {
+    "redmineIssueId": 80709,
+    "azureWorkItemId": 181,
+    "redmineAttachmentId": 212293,
+    "fileName": "clipboard-202506161420-x7p8j.png",
+    "fileSize": 195421,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:22.5153802Z"
+  },
+  {
+    "redmineIssueId": 80709,
+    "azureWorkItemId": 181,
+    "redmineAttachmentId": 212294,
+    "fileName": "clipboard-202506161421-g6gej.png",
+    "fileSize": 225477,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:24.3575167Z"
+  },
+  {
+    "redmineIssueId": 80709,
+    "azureWorkItemId": 181,
+    "redmineAttachmentId": 213243,
+    "fileName": "clipboard-202506212251-2mrsx.png",
+    "fileSize": 171477,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:25.912689Z"
+  },
+  {
+    "redmineIssueId": 80520,
+    "azureWorkItemId": 193,
+    "redmineAttachmentId": 211731,
+    "fileName": "clipboard-202506111706-l0egv.png",
+    "fileSize": 216039,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:30.2443534Z"
+  },
+  {
+    "redmineIssueId": 80520,
+    "azureWorkItemId": 193,
+    "redmineAttachmentId": 211732,
+    "fileName": "clipboard-202506111706-vwbmr.png",
+    "fileSize": 221041,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:32.2531416Z"
+  },
+  {
+    "redmineIssueId": 80520,
+    "azureWorkItemId": 193,
+    "redmineAttachmentId": 212247,
+    "fileName": "clipboard-202506151812-x4ovs.png",
+    "fileSize": 354195,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:34.4087862Z"
+  },
+  {
+    "redmineIssueId": 80520,
+    "azureWorkItemId": 193,
+    "redmineAttachmentId": 212662,
+    "fileName": "clipboard-202506181133-dr0im.png",
+    "fileSize": 206998,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:35.9668808Z"
+  },
+  {
+    "redmineIssueId": 80442,
+    "azureWorkItemId": 206,
+    "redmineAttachmentId": 211513,
+    "fileName": "clipboard-202506101611-n5lsh.png",
+    "fileSize": 159779,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:40.2325085Z"
+  },
+  {
+    "redmineIssueId": 80442,
+    "azureWorkItemId": 206,
+    "redmineAttachmentId": 212637,
+    "fileName": "clipboard-202506181021-4fxmw.png",
+    "fileSize": 161188,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:42.1755004Z"
+  },
+  {
+    "redmineIssueId": 80392,
+    "azureWorkItemId": 210,
+    "redmineAttachmentId": 211305,
+    "fileName": "clipboard-202506091743-oquuo.png",
+    "fileSize": 39629,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:45.8324033Z"
+  },
+  {
+    "redmineIssueId": 80392,
+    "azureWorkItemId": 210,
+    "redmineAttachmentId": 211306,
+    "fileName": "clipboard-202506091743-zn2bh.png",
+    "fileSize": 188977,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:47.9714581Z"
+  },
+  {
+    "redmineIssueId": 80392,
+    "azureWorkItemId": 210,
+    "redmineAttachmentId": 211389,
+    "fileName": "clipboard-202506101100-mm2lk.png",
+    "fileSize": 192539,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:49.8335332Z"
+  },
+  {
+    "redmineIssueId": 80392,
+    "azureWorkItemId": 210,
+    "redmineAttachmentId": 212231,
+    "fileName": "clipboard-202506150203-xjceb.png",
+    "fileSize": 211715,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:51.4178757Z"
+  },
+  {
+    "redmineIssueId": 80392,
+    "azureWorkItemId": 210,
+    "redmineAttachmentId": 212540,
+    "fileName": "clipboard-202506171645-us2oo.png",
+    "fileSize": 191582,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:52.9489634Z"
+  },
+  {
+    "redmineIssueId": 80392,
+    "azureWorkItemId": 210,
+    "redmineAttachmentId": 212541,
+    "fileName": "clipboard-202506171645-lty9t.png",
+    "fileSize": 196523,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:54.4929349Z"
+  },
+  {
+    "redmineIssueId": 80269,
+    "azureWorkItemId": 226,
+    "redmineAttachmentId": 211000,
+    "fileName": "clipboard-202506061142-syzgt.png",
+    "fileSize": 160851,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:13:58.7436725Z"
+  },
+  {
+    "redmineIssueId": 80269,
+    "azureWorkItemId": 226,
+    "redmineAttachmentId": 211001,
+    "fileName": "clipboard-202506061142-4hkns.png",
+    "fileSize": 161186,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:14:00.6223796Z"
+  },
+  {
+    "redmineIssueId": 80269,
+    "azureWorkItemId": 226,
+    "redmineAttachmentId": 211002,
+    "fileName": "clipboard-202506061146-rlvg3.png",
+    "fileSize": 161186,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:14:02.6830595Z"
+  },
+  {
+    "redmineIssueId": 80269,
+    "azureWorkItemId": 226,
+    "redmineAttachmentId": 211003,
+    "fileName": "clipboard-202506061146-rnvww.png",
+    "fileSize": 95308,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:14:04.2289657Z"
+  },
+  {
+    "redmineIssueId": 80269,
+    "azureWorkItemId": 226,
+    "redmineAttachmentId": 211004,
+    "fileName": "clipboard-202506061146-kntv0.png",
+    "fileSize": 114220,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:14:05.6771966Z"
+  },
+  {
+    "redmineIssueId": 80269,
+    "azureWorkItemId": 226,
+    "redmineAttachmentId": 211827,
+    "fileName": "clipboard-202506120014-z8xgt.png",
+    "fileSize": 240838,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:14:07.295428Z"
+  },
+  {
+    "redmineIssueId": 80269,
+    "azureWorkItemId": 226,
+    "redmineAttachmentId": 211828,
+    "fileName": "clipboard-202506120017-txmgi.png",
+    "fileSize": 241506,
+    "migrationSuccess": true,
+    "errorMessage": null,
+    "migratedAt": "2025-06-25T10:14:08.9144931Z"
+  }
+]
