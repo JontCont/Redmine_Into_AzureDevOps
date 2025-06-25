@@ -11,6 +11,10 @@ public interface IMigrationService
     Task<bool> SyncIssueStatusAsync(Issue redmineIssue);
     Task<bool> MigrateAttachmentsAsync(Issue redmineIssue, int azureWorkItemId);
     Task<MigrationSummary> GetMigrationSummaryAsync();
+    // 新增方法：修正工作項目類型
+    Task<bool> CorrectWorkItemTypeAsync(int redmineIssueId, string correctWorkItemType);
+    // 新增方法：同步到 Redmine
+    Task<bool> SyncToRedmineAsync(int azureWorkItemId, string? commitMessage = null);
 }
 
 public class MigrationService : IMigrationService
@@ -44,6 +48,7 @@ public class MigrationService : IMigrationService
         {
             RedmineIssueId = redmineIssue.Id,
             RedmineStatus = redmineIssue.Status?.Name ?? "Unknown",
+            WorkItemType = _config.WorkItemTypeMapping.GetValueOrDefault(redmineIssue.Tracker?.Name ?? "Task", "Task"),
             Status = MigrationStatus.InProgress,
             MigratedAt = DateTime.UtcNow
         };
@@ -84,6 +89,9 @@ public class MigrationService : IMigrationService
                 migrationRecord.AzureStatus = workItem.Fields.TryGetValue("System.State", out var stateValue) 
                     ? stateValue?.ToString() ?? "New" 
                     : "New";
+                migrationRecord.WorkItemType = workItem.Fields.TryGetValue("System.WorkItemType", out var typeValue)
+                    ? typeValue?.ToString() ?? "Task"
+                    : "Task";
 
                 // 遷移附件
                 if (_config.EnableAttachmentMigration && redmineIssue.Attachments?.Any() == true)
@@ -263,6 +271,89 @@ public class MigrationService : IMigrationService
             LastMigrationDate = records.Where(r => r.Status == MigrationStatus.Completed)
                                       .Max(r => r.MigratedAt)
         };
+    }
+
+    public async Task<bool> CorrectWorkItemTypeAsync(int redmineIssueId, string correctWorkItemType)
+    {
+        try
+        {
+            var migrationRecord = await _trackingService.GetMigrationRecordAsync(redmineIssueId);
+            if (migrationRecord?.AzureWorkItemId == null)
+            {
+                Console.WriteLine($"找不到對應的遷移記錄: Redmine Issue #{redmineIssueId}");
+                return false;
+            }
+
+            // 修正 Azure DevOps Work Item 類型
+            var updateResult = await _azureFactory.CorrectWorkItemTypeAsync(migrationRecord.AzureWorkItemId.Value, correctWorkItemType);
+            
+            if (updateResult != null)
+            {
+                // 更新遷移記錄
+                migrationRecord.WorkItemType = correctWorkItemType;
+                migrationRecord.LastSyncAt = DateTime.UtcNow;
+                await _trackingService.SaveMigrationRecordAsync(migrationRecord);
+                
+                Console.WriteLine($"✅ 成功修正 Work Item #{migrationRecord.AzureWorkItemId} 類型為: {correctWorkItemType}");
+                return true;
+            }
+            
+            return false;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"❌ 修正 Work Item 類型失敗: {ex.Message}");
+            return false;
+        }
+    }
+
+    public async Task<bool> SyncToRedmineAsync(int azureWorkItemId, string? commitMessage = null)
+    {
+        try
+        {
+            var migrationRecord = await _trackingService.GetMigrationRecordByAzureIdAsync(azureWorkItemId);
+            if (migrationRecord?.RedmineIssueId == null)
+            {
+                Console.WriteLine($"找不到對應的 Redmine Issue for Azure Work Item #{azureWorkItemId}");
+                return false;
+            }
+
+            var redmineIssueId = migrationRecord.RedmineIssueId;
+            var redmineIssue = await _redmineFactory.GetIssueAsync(redmineIssueId);
+            if (redmineIssue == null)
+            {
+                Console.WriteLine($"找不到 Redmine Issue #{redmineIssueId}");
+                return false;
+            }
+
+            // 僅更新狀態 (限制同步範圍，避免覆蓋其他欄位)
+            // 使用反向狀態對應將 Azure DevOps 狀態轉換為 Redmine 狀態
+            var azureStatus = migrationRecord.AzureStatus;
+            var redmineStatus = _config.ReverseStatusMapping.GetValueOrDefault(azureStatus, azureStatus);
+            
+            var updated = await _redmineFactory.UpdateIssueStatusAsync(redmineIssue, redmineStatus, 
+                $"狀態由 Azure DevOps Work Item #{azureWorkItemId} 同步更新 ({azureStatus} → {redmineStatus})");
+            
+            // 如果有 commit 訊息，則添加到 Redmine
+            if (!string.IsNullOrEmpty(commitMessage))
+            {
+                await _redmineFactory.AddCommitMessageAsync(redmineIssueId, commitMessage);
+            }
+
+            if (updated)
+            {
+                migrationRecord.LastSyncAt = DateTime.UtcNow;
+                await _trackingService.SaveMigrationRecordAsync(migrationRecord);
+                Console.WriteLine($"✅ 成功同步到 Redmine Issue #{redmineIssueId} (僅狀態和 commit 訊息)");
+            }
+            
+            return updated;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"❌ 同步到 Redmine 失敗: {ex.Message}");
+            return false;
+        }
     }
 }
 

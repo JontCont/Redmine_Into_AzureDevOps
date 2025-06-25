@@ -257,6 +257,107 @@ public class AzureDevopsFactory : VssConnection
         }
     }
 
+    /// <summary>
+    /// 取得指定的 Work Item
+    /// </summary>
+    public async Task<WorkItem?> GetWorkItemAsync(int workItemId)
+    {
+        try
+        {
+            using var workItemClient = _connection.GetClient<WorkItemTrackingHttpClient>();
+            var workItem = await workItemClient.GetWorkItemAsync(workItemId);
+            return workItem;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"取得 Work Item #{workItemId} 失敗: {ex.Message}");
+            return null;
+        }
+    }
+
+    /// <summary>
+    /// 更新 Work Item (支援批次更新多個欄位)
+    /// </summary>
+    public async Task<WorkItem?> UpdateWorkItemAsync(int workItemId, WorkItem sourceWorkItem)
+    {
+        try
+        {
+            using var workItemClient = _connection.GetClient<WorkItemTrackingHttpClient>();
+
+            var document = new JsonPatchDocument();
+            
+            // 只更新允許修改的欄位，避免覆蓋系統欄位
+            if (sourceWorkItem.Fields.ContainsKey("System.WorkItemType"))
+            {
+                document.Add(new JsonPatchOperation()
+                {
+                    Operation = Operation.Replace,
+                    Path = "/fields/System.WorkItemType",
+                    Value = sourceWorkItem.Fields["System.WorkItemType"]
+                });
+            }
+
+            if (sourceWorkItem.Fields.ContainsKey("System.State"))
+            {
+                document.Add(new JsonPatchOperation()
+                {
+                    Operation = Operation.Replace,
+                    Path = "/fields/System.State",
+                    Value = sourceWorkItem.Fields["System.State"]
+                });
+            }
+
+            if (sourceWorkItem.Fields.ContainsKey("System.Title"))
+            {
+                document.Add(new JsonPatchOperation()
+                {
+                    Operation = Operation.Replace,
+                    Path = "/fields/System.Title",
+                    Value = sourceWorkItem.Fields["System.Title"]
+                });
+            }
+
+            var result = await workItemClient.UpdateWorkItemAsync(document, workItemId);
+            Console.WriteLine($"更新 Work Item #{workItemId} 成功");
+            
+            return result;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"更新 Work Item #{workItemId} 失敗: {ex.Message}");
+            return null;
+        }
+    }
+
+    /// <summary>
+    /// 修正 Work Item 類型
+    /// </summary>
+    public async Task<WorkItem?> CorrectWorkItemTypeAsync(int workItemId, string newWorkItemType)
+    {
+        try
+        {
+            using var workItemClient = _connection.GetClient<WorkItemTrackingHttpClient>();
+
+            var document = new JsonPatchDocument();
+            document.Add(new JsonPatchOperation()
+            {
+                Operation = Operation.Replace,
+                Path = "/fields/System.WorkItemType",
+                Value = newWorkItemType
+            });
+
+            var result = await workItemClient.UpdateWorkItemAsync(document, workItemId);
+            Console.WriteLine($"修正 Work Item #{workItemId} 類型為: {newWorkItemType}");
+            
+            return result;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"修正 Work Item #{workItemId} 類型失敗: {ex.Message}");
+            return null;
+        }
+    }
+
     private string GetMappedWorkItemType(string redmineTracker)
     {
         return _migrationConfig.WorkItemTypeMapping.GetValueOrDefault(redmineTracker, "Task");

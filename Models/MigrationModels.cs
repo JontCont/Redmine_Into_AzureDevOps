@@ -6,6 +6,7 @@ public class MigrationRecord
     public int? AzureWorkItemId { get; set; }
     public string RedmineStatus { get; set; } = string.Empty;
     public string AzureStatus { get; set; } = string.Empty;
+    public string WorkItemType { get; set; } = string.Empty; // 新增欄位記錄工作項目類型
     public DateTime MigratedAt { get; set; }
     public DateTime? LastSyncAt { get; set; }
     public bool HasAttachments { get; set; }

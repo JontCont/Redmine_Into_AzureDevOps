@@ -27,4 +27,5 @@ public class MigrationConfig
     public bool EnableAttachmentMigration { get; set; } = true;
     public Dictionary<string, string> StatusMapping { get; set; } = new();
     public Dictionary<string, string> WorkItemTypeMapping { get; set; } = new();
+    public Dictionary<string, string> ReverseStatusMapping { get; set; } = new();
 }

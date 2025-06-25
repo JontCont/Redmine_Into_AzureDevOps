@@ -47,6 +47,12 @@
       "已解決": "Resolved",
       "已關閉": "Closed"
     },
+    "ReverseStatusMapping": {
+      "New": "新建",
+      "Active": "進行中",
+      "Resolved": "已解決",
+      "Closed": "已關閉"
+    },
     "WorkItemTypeMapping": {
       "錯誤": "Bug",
       "功能": "User Story",
@@ -183,3 +189,34 @@ dotnet run
 ### v1.0.0 (原始版本)
 - 基本 Issues 列表查詢
 - 簡單的 Work Items 顯示
+
+### 🔧 新增功能 (問題解決)
+
+#### 1. 工作項目類型修正
+- **問題**: 已經生成的 work type 在同步時候要可以修正回來
+- **解決方案**: 新增 `CorrectWorkItemTypeAsync` 方法
+- **功能**: 
+  - 可以修正已遷移的工作項目類型 (Bug、Task、Feature 等)
+  - 自動更新遷移記錄
+  - 保持資料一致性
+
+```csharp
+// 修正工作項目類型
+await migrationService.CorrectWorkItemTypeAsync(redmineIssueId: 123, correctWorkItemType: "Bug");
+```
+
+#### 2. 限制性 Redmine 同步
+- **問題**: 同步給 redmine 只能修改狀態以及回寫 commit 訊息
+- **解決方案**: 新增 `SyncToRedmineAsync` 方法，限制同步範圍
+- **功能**:
+  - 僅允許狀態更新和 commit 訊息添加
+  - 防止覆蓋 Redmine 中的其他重要資料
+  - 支援反向狀態對應
+
+```csharp
+// 同步狀態和 commit 訊息到 Redmine
+await migrationService.SyncToRedmineAsync(azureWorkItemId: 456, commitMessage: "修正關鍵 bug");
+
+// 僅同步狀態
+await migrationService.SyncToRedmineAsync(azureWorkItemId: 789);
+```

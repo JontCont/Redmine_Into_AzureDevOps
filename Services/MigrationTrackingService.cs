@@ -11,6 +11,7 @@ public interface IMigrationTrackingService
     Task<bool> IsIssueAlreadyMigratedAsync(int redmineIssueId);
     Task SaveAttachmentRecordAsync(AttachmentMigrationRecord record);
     Task<List<AttachmentMigrationRecord>> GetAttachmentRecordsAsync(int redmineIssueId);
+    Task<MigrationRecord?> GetMigrationRecordByAzureIdAsync(int azureWorkItemId);
 }
 
 public class FileMigrationTrackingService : IMigrationTrackingService
@@ -148,5 +149,11 @@ public class FileMigrationTrackingService : IMigrationTrackingService
                 _fileLock.Release();
             }
         }
+    }
+
+    public async Task<MigrationRecord?> GetMigrationRecordByAzureIdAsync(int azureWorkItemId)
+    {
+        var records = await GetAllMigrationRecordsAsync();
+        return records.FirstOrDefault(r => r.AzureWorkItemId == azureWorkItemId);
     }
 }
