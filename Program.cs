@@ -86,8 +86,9 @@ namespace redmineApi
                 Console.WriteLine("9. 診斷 Issue 同步狀況");
                 Console.WriteLine("10. 刷新 Work Item 狀態記錄");
                 Console.WriteLine("11. 修復 null Azure Work Item ID");
+                Console.WriteLine("12. 查看 Redmine 狀態清單");
                 Console.WriteLine("0. 結束程式");
-                Console.Write("\n請選擇操作 (0-11): ");
+                Console.Write("\n請選擇操作 (0-12): ");
 
                 var choice = Console.ReadLine();
 
@@ -127,6 +128,9 @@ namespace redmineApi
                             break;
                         case "11":
                             await RepairNullWorkItemIdsAsync(migrationService);
+                            break;
+                        case "12":
+                            await ShowRedmineStatusListAsync(serviceProvider);
                             break;
                         case "0":
                             return;
@@ -446,6 +450,14 @@ namespace redmineApi
             {
                 Console.WriteLine($"⚠️  {result.FailedRepairs} 個記錄修復失敗，請檢查錯誤訊息");
             }
+        }
+
+        private static async Task ShowRedmineStatusListAsync(IServiceProvider serviceProvider)
+        {
+            Console.WriteLine("\n=== Redmine 狀態清單 ===");
+            
+            var redmineFactory = serviceProvider.GetRequiredService<RedmineFactory>();
+            await Task.Run(() => redmineFactory.GetAllIssueStatuses());
         }
     }
 }

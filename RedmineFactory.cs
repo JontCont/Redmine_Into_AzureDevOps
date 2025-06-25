@@ -179,21 +179,40 @@ public class RedmineFactory : RedmineManager
     /// </summary>
     private int? GetStatusId(string statusName)
     {
-        // 這裡應該根據實際的 Redmine 狀態設定來對應
-        // 建議從配置檔讀取或從 API 動態取得
+        // 根據實際的 Redmine 狀態設定來對應
+        // 這裡需要對應到您的 Redmine 系統中的實際狀態 ID
         var statusMapping = new Dictionary<string, int>
         {
+            // 英文狀態
             { "New", 1 },
             { "Active", 2 },
             { "Resolved", 3 },
             { "Closed", 5 },
-            { "新建", 1 },
-            { "進行中", 2 },
-            { "已解決", 3 },
+            
+            // 中文狀態 - 根據您的 appsettings.json 對應
+            { "新建立", 1 },
+            { "新建立(new)", 1 },
+            { "待確認", 1 },
+            { "已排入開發", 2 },
+            { "實作中", 2 },
+            { "實作中（doing）", 2 },
+            { "待更新客戶端環境", 2 },
+            { "待測試", 3 },
+            { "待測試(ready to test)", 3 },
+            { "待客戶驗收", 3 },
+            { "已結束", 5 },
             { "已關閉", 5 }
         };
 
-        return statusMapping.GetValueOrDefault(statusName, 1); // 預設為 New
+        var statusId = statusMapping.GetValueOrDefault(statusName);
+        if (statusId == 0)
+        {
+            Console.WriteLine($"警告: 找不到狀態 '{statusName}' 的對應 ID，使用預設值 1 (New)");
+            return 1; // 預設為 New
+        }
+        
+        Console.WriteLine($"狀態對應: '{statusName}' → ID {statusId}");
+        return statusId;
     }
 
     /// <summary>
@@ -218,5 +237,34 @@ public class RedmineFactory : RedmineManager
         });
         return fullResult?.Count ?? 0;
     }
-    
+
+    /// <summary>
+    /// 取得 Redmine 系統中所有可用的狀態
+    /// </summary>
+    public void GetAllIssueStatuses()
+    {
+        try
+        {
+            Console.WriteLine("📋 Redmine 系統中的所有狀態:");
+            Console.WriteLine("=" + new string('=', 40));
+            
+            var statuses = this.GetObjects<IssueStatus>(new NameValueCollection());
+            
+            if (statuses != null && statuses.Any())
+            {
+                foreach (var status in statuses)
+                {
+                    Console.WriteLine($"ID: {status.Id,3} | 名稱: {status.Name}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("無法取得狀態清單");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"取得狀態清單失敗: {ex.Message}");
+        }
+    }
 }
