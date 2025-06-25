@@ -115,6 +115,17 @@ public class AzureDevopsFactory : VssConnection
                 Value = FormatWorkItemDescription(redmineIssue)
             });
 
+            // 如果是 Bug 類型的 Work Item，將描述內容也寫入 Repro Steps 欄位
+            if (workItemType == "Bug" && !string.IsNullOrWhiteSpace(redmineIssue.Description))
+            {
+                document.Add(new JsonPatchOperation()
+                {
+                    Operation = Operation.Add,
+                    Path = "/fields/Microsoft.VSTS.TCM.ReproSteps",
+                    Value = FormatReproStepsDescription(redmineIssue)
+                });
+            }
+
             document.Add(new JsonPatchOperation()
             {
                 Operation = Operation.Add,
@@ -353,6 +364,79 @@ public class AzureDevopsFactory : VssConnection
             Console.WriteLine($"修正 Work Item #{workItemId} 類型失敗: {ex.Message}");
             return null;
         }
+    }
+
+    /// <summary>
+    /// 格式化 Repro Steps 欄位內容，專注於 bug 重現步驟
+    /// </summary>
+    private string FormatReproStepsDescription(Issue redmineIssue)
+    {
+        var html = new System.Text.StringBuilder();
+        
+        // Repro Steps 標題
+        html.AppendLine("<div style='background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 8px; padding: 16px; margin-bottom: 16px;'>");
+        html.AppendLine("  <h4 style='color: #856404; margin-top: 0; margin-bottom: 12px; font-size: 16px; display: flex; align-items: center;'>");
+        html.AppendLine("    <span style='margin-right: 8px;'>🐛</span>");
+        html.AppendLine("    <span>Bug 重現步驟與詳細描述</span>");
+        html.AppendLine("  </h4>");
+        
+        // 主要描述內容
+        if (!string.IsNullOrWhiteSpace(redmineIssue.Description))
+        {
+            // 處理描述內容，改善格式
+            var description = ProcessDescriptionContent(redmineIssue.Description);
+            
+            html.AppendLine("  <div style='background-color: #ffffff; padding: 15px; border-radius: 6px; border: 1px solid #e1e4e8; margin-bottom: 12px;'>");
+            html.AppendLine("    <h5 style='color: #0366d6; margin-top: 0; margin-bottom: 10px; font-size: 14px;'>📋 問題詳細描述</h5>");
+            html.AppendLine($"    <div style='line-height: 1.8; color: #24292e; font-size: 14px;'>{description}</div>");
+            html.AppendLine("  </div>");
+        }
+        
+        // Redmine 原始資訊
+        html.AppendLine("  <div style='background-color: #f8f9fa; padding: 12px; border-radius: 6px; border-left: 4px solid #0366d6;'>");
+        html.AppendLine("    <div style='font-size: 12px; color: #586069; margin-bottom: 6px;'>");
+        html.AppendLine("      <strong>原始 Redmine Issue:</strong>");
+        html.AppendLine($"      <code>#{redmineIssue.Id}</code>");
+        
+        if (redmineIssue.Tracker != null)
+        {
+            html.AppendLine($" | <strong>類型:</strong> {redmineIssue.Tracker.Name}");
+        }
+        
+        if (redmineIssue.Priority != null)
+        {
+            html.AppendLine($" | <strong>優先權:</strong> {redmineIssue.Priority.Name}");
+        }
+        
+        html.AppendLine("    </div>");
+        
+        if (redmineIssue.CreatedOn.HasValue)
+        {
+            html.AppendLine($"    <div style='font-size: 12px; color: #586069;'>");
+            html.AppendLine($"      <strong>建立時間:</strong> {redmineIssue.CreatedOn.Value:yyyy-MM-dd HH:mm}");
+            
+            if (redmineIssue.Author != null)
+            {
+                html.AppendLine($" | <strong>建立者:</strong> {redmineIssue.Author.Name}");
+            }
+            
+            html.AppendLine("    </div>");
+        }
+        
+        html.AppendLine("  </div>");
+        html.AppendLine("</div>");
+        
+        // 重現步驟提示區塊
+        html.AppendLine("<div style='background-color: #e6fffa; border: 1px solid #81e6d9; border-radius: 6px; padding: 12px; margin-top: 12px;'>");
+        html.AppendLine("  <div style='color: #234e52; font-size: 13px; font-weight: 600; margin-bottom: 8px;'>💡 測試人員注意事項</div>");
+        html.AppendLine("  <div style='color: #2d3748; font-size: 12px; line-height: 1.5;'>");
+        html.AppendLine("    • 請根據上述描述進行問題重現測試<br/>");
+        html.AppendLine("    • 如需更多詳細資訊，請參考原始 Redmine Issue<br/>");
+        html.AppendLine("    • 測試完成後請更新此 Work Item 的狀態");
+        html.AppendLine("  </div>");
+        html.AppendLine("</div>");
+        
+        return html.ToString();
     }
 
     /// <summary>
