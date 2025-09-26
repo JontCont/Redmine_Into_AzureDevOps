@@ -1,0 +1,9 @@
+{
+    "github.copilot.chat.reviewSelection.instructions": [
+        {
+            "text": "所有回答都用中文回答",
+        }
+    ],
+    "gitlens.ai.generateChangelog.customInstructions": "",
+    "github.copilot.chat.localeOverride": "zh-TW",
+}

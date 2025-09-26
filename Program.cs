@@ -67,7 +67,15 @@ namespace redmineApi
             services.AddSingleton<RedmineFactory>();
             services.AddSingleton<AzureDevopsFactory>();
             services.AddSingleton<IMigrationTrackingService, FileMigrationTrackingService>();
-            services.AddSingleton<IMigrationService, MigrationService>();
+            services.AddSingleton<IMigrationService>(sp =>
+                new MigrationService(
+                    sp.GetRequiredService<RedmineFactory>(),
+                    sp.GetRequiredService<AzureDevopsFactory>(),
+                    sp.GetRequiredService<IMigrationTrackingService>(),
+                    sp.GetRequiredService<MigrationConfig>(),
+                    sp.GetRequiredService<ILogger<MigrationService>>()
+                )
+            );
         }
 
         private static async Task ShowMenuAsync(IMigrationService migrationService, RedmineFactory redmineFactory, ILogger logger, IServiceProvider serviceProvider)

@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Logging;
 using redmineApi.Models;
 using redmineApi.Services;
 using Redmine.Net.Api.Types;
@@ -32,23 +33,27 @@ public class MigrationService : IMigrationService
     private readonly IMigrationTrackingService _trackingService;
     private readonly MigrationConfig _config;
 
+    private readonly ILogger<MigrationService> _logger;
+
     public MigrationService(
         RedmineFactory redmineFactory,
         AzureDevopsFactory azureFactory,
         IMigrationTrackingService trackingService,
-        MigrationConfig config)
+        MigrationConfig config,
+        ILogger<MigrationService> logger)
     {
         _redmineFactory = redmineFactory ?? throw new ArgumentNullException(nameof(redmineFactory));
         _azureFactory = azureFactory ?? throw new ArgumentNullException(nameof(azureFactory));
         _trackingService = trackingService ?? throw new ArgumentNullException(nameof(trackingService));
         _config = config ?? throw new ArgumentNullException(nameof(config));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
     public async Task<bool> MigrateIssueAsync(Issue redmineIssue, bool forceUpdate = false)
     {
         if (redmineIssue?.Id == null || redmineIssue.Id <= 0)
         {
-            Console.WriteLine("無效的 Redmine Issue");
+            _logger.LogWarning("無效的 Redmine Issue");
             return false;
         }
 
@@ -66,7 +71,7 @@ public class MigrationService : IMigrationService
             // 檢查是否已經遷移過
             if (!forceUpdate && await _trackingService.IsIssueAlreadyMigratedAsync(redmineIssue.Id))
             {
-                Console.WriteLine($"Redmine Issue #{redmineIssue.Id} 已經遷移過，跳過");
+                _logger.LogInformation("Redmine Issue #{RedmineIssueId} 已經遷移過，跳過", redmineIssue.Id);
                 migrationRecord.Status = MigrationStatus.Skipped;
                 await _trackingService.SaveMigrationRecordAsync(migrationRecord);
                 return true;
@@ -79,14 +84,14 @@ public class MigrationService : IMigrationService
 
             if (existingWorkItem != null)
             {
-                Console.WriteLine($"找到現有的 Work Item #{existingWorkItem.Id}，更新狀態");
+                _logger.LogInformation("找到現有的 Work Item #{WorkItemId}，更新狀態", existingWorkItem.Id);
                 var mappedStatus = _config.StatusMapping.GetValueOrDefault(redmineIssue.Status?.Name ?? "New", "New");
                 workItem = await _azureFactory.UpdateWorkItemStatusAsync(existingWorkItem.Id ?? 0, mappedStatus);
                 migrationRecord.AzureWorkItemId = existingWorkItem.Id;
             }
             else
             {
-                Console.WriteLine($"建立新的 Work Item 從 Redmine Issue #{redmineIssue.Id}");
+                _logger.LogInformation("建立新的 Work Item 從 Redmine Issue #{RedmineIssueId}", redmineIssue.Id);
                 workItem = await _azureFactory.CreateWorkItemFromIssueAsync(redmineIssue);
                 migrationRecord.AzureWorkItemId = workItem?.Id;
             }
@@ -112,20 +117,20 @@ public class MigrationService : IMigrationService
                 migrationRecord.Status = MigrationStatus.Completed;
                 migrationRecord.LastSyncAt = DateTime.UtcNow;
                 
-                Console.WriteLine($"✅ 成功遷移 Redmine Issue #{redmineIssue.Id} → Azure Work Item #{workItem.Id}");
+                _logger.LogInformation("✅ 成功遷移 Redmine Issue #{RedmineIssueId} → Azure Work Item #{WorkItemId}", redmineIssue.Id, workItem.Id);
             }
             else
             {
                 migrationRecord.Status = MigrationStatus.Failed;
                 migrationRecord.ErrorMessage = "無法建立或更新 Work Item";
-                Console.WriteLine($"❌ 遷移失敗: Redmine Issue #{redmineIssue.Id}");
+                _logger.LogError("❌ 遷移失敗: Redmine Issue #{RedmineIssueId}", redmineIssue.Id);
             }
         }
         catch (Exception ex)
         {
             migrationRecord.Status = MigrationStatus.Failed;
             migrationRecord.ErrorMessage = ex.Message;
-            Console.WriteLine($"❌ 遷移 Issue #{redmineIssue.Id} 時發生錯誤: {ex.Message}");
+            _logger.LogError(ex, "❌ 遷移 Issue #{RedmineIssueId} 時發生錯誤: {ErrorMessage}", redmineIssue.Id, ex.Message);
         }
         finally
         {
@@ -147,7 +152,7 @@ public class MigrationService : IMigrationService
         for (int i = 0; i < issues.Count; i += _config.BatchSize)
         {
             var batch = issues.Skip(i).Take(_config.BatchSize);
-            Console.WriteLine($"處理批次 {(i / _config.BatchSize) + 1} ({i + 1}-{Math.Min(i + _config.BatchSize, totalCount)}/{totalCount})");
+            _logger.LogInformation("處理批次 {Batch} ({Start}-{End}/{Total})", (i / _config.BatchSize) + 1, i + 1, Math.Min(i + _config.BatchSize, totalCount), totalCount);
 
             var tasks = batch.Select(issue => MigrateIssueAsync(issue, forceUpdate));
             var results = await Task.WhenAll(tasks);
@@ -161,7 +166,7 @@ public class MigrationService : IMigrationService
             }
         }
 
-        Console.WriteLine($"遷移完成: {successCount}/{totalCount} 成功");
+        _logger.LogInformation("遷移完成: {SuccessCount}/{TotalCount} 成功", successCount, totalCount);
         return successCount == totalCount;
     }
 
@@ -172,7 +177,7 @@ public class MigrationService : IMigrationService
         var existingRecord = await _trackingService.GetMigrationRecordAsync(redmineIssue.Id);
         if (existingRecord?.AzureWorkItemId == null)
         {
-            Console.WriteLine($"找不到對應的 Azure Work Item for Redmine Issue #{redmineIssue.Id}");
+            _logger.LogWarning("找不到對應的 Azure Work Item for Redmine Issue #{RedmineIssueId}", redmineIssue.Id);
             return false;
         }
 
@@ -260,7 +265,7 @@ public class MigrationService : IMigrationService
             }
         }
 
-        Console.WriteLine($"附件遷移完成: {successCount}/{redmineIssue.Attachments.Count()} 成功");
+        _logger.LogInformation("附件遷移完成: {SuccessCount}/{TotalCount} 成功", successCount, redmineIssue.Attachments.Count());
         return successCount == redmineIssue.Attachments.Count();
     }
 
@@ -288,7 +293,7 @@ public class MigrationService : IMigrationService
             var migrationRecord = await _trackingService.GetMigrationRecordAsync(redmineIssueId);
             if (migrationRecord?.AzureWorkItemId == null)
             {
-                Console.WriteLine($"找不到對應的遷移記錄: Redmine Issue #{redmineIssueId}");
+                _logger.LogWarning("找不到對應的遷移記錄: Redmine Issue #{RedmineIssueId}", redmineIssueId);
                 return false;
             }
 
@@ -302,7 +307,7 @@ public class MigrationService : IMigrationService
                 migrationRecord.LastSyncAt = DateTime.UtcNow;
                 await _trackingService.SaveMigrationRecordAsync(migrationRecord);
                 
-                Console.WriteLine($"✅ 成功修正 Work Item #{migrationRecord.AzureWorkItemId} 類型為: {correctWorkItemType}");
+                _logger.LogInformation("✅ 成功修正 Work Item #{AzureWorkItemId} 類型為: {CorrectWorkItemType}", migrationRecord.AzureWorkItemId, correctWorkItemType);
                 return true;
             }
             
@@ -310,7 +315,7 @@ public class MigrationService : IMigrationService
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"❌ 修正 Work Item 類型失敗: {ex.Message}");
+            _logger.LogError(ex, "❌ 修正 Work Item 類型失敗: {ErrorMessage}", ex.Message);
             return false;
         }
     }
